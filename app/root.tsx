@@ -28,7 +28,7 @@ const App = () => {
     <html lang='en'>
       <head>
         <meta charSet='utf-8' />
-        <title>Remix: So great, it's funny!</title>
+        <title>Suriyah's Jokes!</title>
         <Links />
       </head>
       <body>
