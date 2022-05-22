@@ -5,7 +5,7 @@ import type { Joke } from '@prisma/client';
 
 import { db } from '~/utils/db.server';
 
-type LoaderData = { joke: Joke };
+type LoaderData = { joke: Joke | null };
 
 export const loader: LoaderFunction = async ({ params }) => {
   const joke = await db.joke.findUnique({
@@ -22,8 +22,8 @@ const JokeRoute = () => {
   return (
     <div>
       <p>Here's your hilarious joke:</p>
-      <p>{data.joke.content}</p>
-      <Link to='.'>{data.joke.name} Permalink</Link>
+      <p>{data.joke?.content}</p>
+      <Link to='.'>{data.joke?.name} Permalink</Link>
     </div>
   );
 };
